@@ -1,0 +1,123 @@
+<h2>Añadir nuevo cliente</h2>
+
+<form [formGroup]="clienteForm" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+
+        <div class="col-md-9">
+
+            <div class="md-form">
+
+                <input mdbInputDirective type="text" id="empresa" class="form-control" formControlName="empresa"
+                       data-success=" " data-error="campo obligatorio" name="empresa">
+                <label for="empresa" class="">Empresa</label>
+
+            </div>
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="md-form">
+
+                <input mdbInputDirective type="text" id="cif" class="form-control" formControlName="cif"
+                       data-success=" " data-error="campo obligatorio" name="cif">
+                <label for="cif" class="">CIF/NIF</label>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="form-row">
+
+        <div class="col">
+
+            <div class="md-form">
+
+                <input mdbInputDirective type="text" id="direccion" class="form-control" formControlName="direccion"
+                       data-success=" " data-error="campo obligatorio" name="direccion">
+                <label for="direccion" class="">Dirección</label>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="form-row">
+
+        <div class="col-md-2">
+
+            <div class="md-form">
+
+                <input mdbInputDirective type="text" id="cp" class="form-control" formControlName="cp"
+                       data-success=" " data-error="campo obligatorio" name="cp">
+                <label for="cp" class="">Código Postal</label>
+
+            </div>
+        </div>
+
+        <div class="col-md-5">
+
+            <div class="md-form">
+
+                <input mdbInputDirective type="text" id="localidad" class="form-control" formControlName="localidad"
+                       data-success=" " data-error="campo obligatorio" name="localidad">
+                <label for="localidad" class="">Localidad</label>
+
+            </div>
+        </div>
+
+        <div class="col-md-5">
+
+            <div class="md-form">
+
+                <input mdbInputDirective type="text" id="provincia" class="form-control" formControlName="provincia"
+                       data-success=" " data-error="campo obligatorio" name="provincia">
+                <label for="provincia" class="">Provincia</label>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="form-row">
+
+        <div class="col-md-4">
+
+            <div class="md-form">
+
+                <input mdbInputDirective type="text" id="telefono" class="form-control" formControlName="telefono"
+                       data-success=" " data-error="campo obligatorio" name="telefono">
+                <label for="telefono" class="">Teléfono</label>
+
+            </div>
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="md-form">
+
+                <input mdbInputDirective type="text" id="email" class="form-control" formControlName="email"
+                       data-success=" " data-error="campo obligatorio" name="email">
+                <label for="email" class="">Correo electrónico</label>
+
+            </div>
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="md-form">
+
+                <input mdbInputDirective type="text" id="contacto" class="form-control" formControlName="contacto"
+                       data-success=" " data-error="campo obligatorio" name="contacto">
+                <label for="contacto" class="">Persona de contacto</label>
+
+            </div>
+        </div>
+    </div>
+
+    <button mdbBtn type="submit" color="elegant" outline="true" mdbWavesEffect [disabled]="!clienteForm.valid">
+        <mdb-icon icon="plus" class="mr-1"></mdb-icon>
+        <strong>Añadir cliente</strong>
+    </button>
+    <div class="alert alert-danger" role="alert" *ngIf="!clienteForm.valid">
+        Por favor, complete todos los campos.
+    </div>
+</form>

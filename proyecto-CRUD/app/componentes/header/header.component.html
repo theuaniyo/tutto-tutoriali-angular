@@ -1,0 +1,44 @@
+<div>
+    <!--Navbar-->
+    <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark elegant-color-dark" [containerInside]="false">
+
+        <!-- Navbar brand -->
+        <mdb-navbar-brand>
+            <a class="navbar-brand" routerLink="/" routerLinkActive="active">LQ Solutions</a>
+        </mdb-navbar-brand>
+
+        <!-- Collapsible content -->
+        <links>
+
+            <!-- Links -->
+            <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item active" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" *ngIf="isAuth$ | async">
+                    <a class="nav-link waves-light" routerLink="/add-cliente" mdbWavesEffect>Añadir nuevo cliente</a>
+                </li>
+
+                <li class="nav-item active" routerLinkActive="active" *ngIf="isAuth$ | async">
+                    <a class="nav-link waves-light" routerLink="/listado-clientes" mdbWavesEffect>Listado de clientes</a>
+                </li>
+
+                <li class="nav-item active" routerLinkActive="active" *ngIf="!(isAuth$ | async)">
+                    <a class="nav-link waves-light" routerLink="/registro" mdbWavesEffect>Registro</a>
+                </li>
+
+                <li class="nav-item active" routerLinkActive="active" *ngIf="!(isAuth$ | async)">
+                    <a class="nav-link waves-light" routerLink="/iniciar-sesion" mdbWavesEffect>Iniciar sesión</a>
+                </li>
+
+                <li class="nav-item active" routerLinkActive="active" *ngIf="isAuth$ | async">
+                    <a class="nav-link waves-light" mdbWavesEffect (click)="cerrarSesion()">Cerrar sesión</a>
+                </li>
+
+            </ul>
+            <!-- Links -->
+
+        </links>
+        <!-- Collapsible content -->
+
+    </mdb-navbar>
+    <!--/.Navbar-->
+</div>

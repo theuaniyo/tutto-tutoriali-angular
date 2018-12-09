@@ -1,0 +1,38 @@
+<h2>Listado de clientes</h2>
+<table mdbTable class="table table-responsive-lg hoverable">
+  <thead class="black white-text text-center">
+  <tr>
+    <th>Empresa</th>
+    <th>CIF/NIF</th>
+    <th>Dirección</th>
+    <th>Código Postal</th>
+    <th>Localidad</th>
+    <th>Provincia</th>
+    <th>Teléfono</th>
+    <th>Correo electrónico</th>
+    <th>Persona de contacto</th>
+    <th>Acciones</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr mdbTableCol *ngFor="let item of listaClientes">
+    <td>{{item.data.empresa}}</td>
+    <td>{{item.data.cif}}</td>
+    <td>{{item.data.direccion}}</td>
+    <td>{{item.data.cp}}</td>
+    <td>{{item.data.localidad}}</td>
+    <td>{{item.data.provincia}}</td>
+    <td>{{item.data.telefono}}</td>
+    <td>{{item.data.email}}</td>
+    <td>{{item.data.contacto}}</td>
+    <td>
+      <a class="btn btn-sm" (click)="editar(item)">
+        <i class="fa fa-pencil"></i>
+      </a>
+      <a class="btn btn-sm" (click)="eliminar(item)">
+        <i class="fa fa-trash"></i>
+      </a>
+    </td>
+  </tr>
+  </tbody>
+</table>
